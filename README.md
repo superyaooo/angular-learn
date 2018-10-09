@@ -1,1 +1,1 @@
-# angular-learn
+# Learn Angular bit by bit.
