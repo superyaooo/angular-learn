@@ -2,6 +2,11 @@
   <div class='card-header'>
     {{pageTitle + ': ' + product.productName}}
   </div>
+  <div class="card-body">
+    <img [src]='product.imageUrl'>
+    <p>Price: {{product.price | currency:'USD' }}</p>
+    <p>{{product.description}}</p>
+  </div>
   <div class='card-footer'>
     <button class="btn btn-outline-secondary"
             (click)='onBack()'
