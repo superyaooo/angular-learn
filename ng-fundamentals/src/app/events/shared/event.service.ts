@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
+import {Subject} from 'rxjs';
 
 @Injectable()
 export class EventService {
     getEvents() {
-        return EVENTS;
+        let subject = new Subject();
+        setTimeout(() => 
+            {
+                subject.next(EVENTS); 
+                subject.complete();
+            },
+            100
+        );
+        return subject;
     }
 
     getEvent(id:number) {
@@ -17,7 +26,7 @@ const EVENTS = [
     date: '9/26/2036',
     time: '10:00 am',
     price: 599.99,
-    imageUrl: '/assets/images/angularconnect-shield.png',
+        imageUrl: '/assets/images/angularconnect-shield.png',
     onlineUrl: 'test.com',
     sessions: [
         {
